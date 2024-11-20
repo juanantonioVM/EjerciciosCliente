@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 03</title>
+</head>
+<body>
+
+    <input type="date" id="fecha">
+    <input type="number" id="dias">
+    <button onclick="calcularNuevaFecha()">Calcular</button>
+    <p id="resultado"></p>
+
+    <script>
+        function modificarFecha(fecha, dias) {
+            const nuevaFecha = new Date(fecha);
+
+            nuevaFecha.setDate(nuevaFecha.getDate() + dias);
+
+            return nuevaFecha;
+        }
+
+        function calcularNuevaFecha() {
+            const fecha = new Date(document.getElementById('fecha').value);
+            const dias = parseInt(document.getElementById('dias').value);
+            const nuevaFecha = modificarFecha(fecha, dias);
+            const año = nuevaFecha.getFullYear();
+            const mes = nuevaFecha.getMonth() + 1;
+            const dia = nuevaFecha.getDate();
+            document.getElementById("resultado").innerHTML = "La nueva fecha es: " + dia + "/" + mes + "/" + año;
+        }
+    </script>
+</body>
+</html>

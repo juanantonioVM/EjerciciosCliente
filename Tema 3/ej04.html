@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 04</title>
+</head>
+<body>
+    <input type="date" id="fecha">
+    <button onclick="obtenerDiaSemana()">Verificar Día</button>
+    <p id="texto"></p>
+    <script>
+        function obtenerDiaSemana() {
+            const fechaIngresada = new Date(document.getElementById('fecha').value);
+            const diasSemana = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
+            const dia = diasSemana[fechaIngresada.getDay()];
+            document.getElementById("texto").innerHTML = "El día "+ dia + " corresponde a la fecha " + fechaIngresada.toLocaleDateString();
+        }
+    </script>
+</body>
+</html>
