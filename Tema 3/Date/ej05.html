@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 05</title>
+</head>
+<body>
+    <label for="fecha1">Fecha en formato YYYY-MM-DD</label>
+    <input type="text" id="fecha1"><br>
+    <button onclick="esFechaValida()">Verificar</button>
+    <p id="fecha"></p>
+    <script>
+        function esFechaValida(fecha1) {
+            var fecha = new Date(fecha1);
+            return !isNaN(fecha.getTime());
+        }
+
+        function verificarFecha() {
+            var fecha = document.getElementById('fecha1').value;
+            if (esFechaValida(fecha)) {
+                document.getElementById('fecha').innerHTML = "La fecha es válida";
+            } else {
+                document.getElementById('fecha').innerHTML = "La fecha es inválida";
+            }
+        }
+    </script>
+</body>
+</html>

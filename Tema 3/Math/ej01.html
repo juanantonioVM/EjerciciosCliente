@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 01</title>
+</head>
+<body>
+    <label for="numero">Ingrese un número decimal:</label>
+    <input type="number" id="numero" step="0.01">
+    <button onclick="redondear()">Redondear</button>
+    <p id="resultado"></p>
+
+    <script>
+        function redondear() {
+            const numero = parseFloat(document.getElementById('numero').value);
+
+            const redondeadoAlCercano = Math.round(numero);
+            const redondeadoArriba = Math.ceil(numero);
+            const redondeadoAbajo = Math.floor(numero);
+
+            document.getElementById('resultado').innerHTML = `
+                El número redondeado al entero más cercano es: ${redondeadoAlCercano}. 
+                El número redondeado hacia arriba es: ${redondeadoArriba}. 
+                El número redondeado hacia abajo es: ${redondeadoAbajo}
+            `;
+        }
+    </script>
+</body>
+</html>

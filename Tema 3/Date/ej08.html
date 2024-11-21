@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 08</title>
+</head>
+<body>
+    <input type="date" id="fecha1">
+    <input type="date" id="fecha2">
+    <button onclick="calcularDiferencia()">Calcular</button>
+    <p id="resultado"></p>
+
+    <script>
+        function calcularDiferencia() {
+
+            const fecha1 = new Date(document.getElementById('fecha1').value);
+            const fecha2 = new Date(document.getElementById('fecha2').value);
+
+            const diferenciaEnMilisegundos = fecha2.getTime() - fecha1.getTime();
+
+            document.getElementById("resultado").innerHTML = "La diferencia entre las fechas es de " + diferenciaEnMilisegundos +" milisegundos.";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de Día de la Semana</title>
+</head>
+<body>
+    <label for="fecha">Ingrese una fecha (AAAA-MM-DD):</label>
+    <input type="date" id="fecha">
+    <button onclick="calcularDia()">Calcular</button>
+    <p id="resultado"></p>
+
+    <script>
+        function calcularDia() {
+            const fechaInput = document.getElementById('fecha').value;
+            const fecha = new Date(fechaInput);
+
+            fecha.setDate(fecha.getDate() + 30);
+            const diaSemana = fecha.getDay();
+
+            const diasSemana = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
+
+            const diaSemanaNombre = diasSemana[diaSemana];
+
+            document.getElementById('resultado').innerHTML = `Dentro de 30 días será: ${diaSemanaNombre}`;
+        }
+    </script>
+</body>
+</html>

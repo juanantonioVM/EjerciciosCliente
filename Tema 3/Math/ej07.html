@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 07</title>
+</head>
+<body>
+    <label for="numero">Ingrese un número entero:</label>
+    <input type="number" id="numero">
+    <button onclick="contarDigitos()">Contar Dígitos</button>
+    <p id="resultado"></p>
+
+    <script>
+        function contarDigitos(numero) {
+            // Verificar si el número es un entero
+            if (!Number.isInteger(numero)) {
+                return "Por favor, ingrese un número entero.";
+            }
+
+            // Convertir el número a una cadena y obtener su longitud
+            const numeroComoCadena = numero.toString();
+            const cantidadDigitos = numeroComoCadena.length;
+
+            return cantidadDigitos;
+        }
+
+        function mostrarResultado() {
+            const numero = parseInt(document.getElementById('numero').value);
+            const resultado = contarDigitos(numero);
+            document.getElementById('resultado').textContent = `El número tiene ${resultado} dígitos.`;
+        }
+    </script>
+</body>
+</html>

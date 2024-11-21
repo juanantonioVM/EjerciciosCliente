@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 03</title>
+</head>
+<body>
+    <label for="base">Base:</label>
+    <input type="number" id="base">
+    <label for="exponente">Exponente:</label>
+    <input type="number" id="exponente">
+    <button onclick="calcular()">Calcular</button>
+    <p id="resultado"></p>
+
+    <script>
+        function calcular() {
+            // Obtener los valores de los inputs
+            const base = parseFloat(document.getElementById('base').value);
+            const exponente = parseFloat(document.getElementById('exponente').value);
+
+            // Calcular la potencia
+            const potencia = Math.pow(base, exponente);
+
+            // Calcular la raíz cuadrada
+            const raizCuadrada = Math.sqrt(base);
+
+            // Mostrar los resultados en la pantalla
+            document.getElementById('resultado').textContent = `
+                La potencia de ${base} elevado a ${exponente} es: ${potencia}. 
+                La raíz cuadrada de ${base} es: ${raizCuadrada}
+            `;
+        }
+    </script>
+</body>
+</html>

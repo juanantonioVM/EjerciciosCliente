@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 04</title>
+</head>
+<body>
+    <p id="resultado"></p>
+
+    <script>
+        function maximoYMinimo(numeros) {
+            // Verifica si el array tiene al menos un elemento
+            if (numeros.length === 0) {
+                return "El array está vacío.";
+            }
+
+            // Utiliza Math.max() y Math.min() para encontrar el máximo y mínimo
+            const maximo = Math.max(numeros);
+            const minimo = Math.min(numeros);
+
+            return `El número máximo es: ${maximo} y el mínimo es: ${minimo}`;
+        }
+
+        // Array de ejemplo
+        const miArray = [45, 2, 89, 32, -10, 7];
+
+        // Llama a la función y muestra el resultado en la pantalla
+        const resultado = maximoYMinimo(miArray);
+        document.getElementById('resultado').innerHTML = resultado;
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 06</title>
+</head>
+<body>
+    <label for="minimo">Número mínimo:</label>
+    <input type="number" id="minimo">
+    <label for="maximo">Número máximo:</label>
+    <input type="number" id="maximo">
+    <button onclick="generarNumeros()">Generar</button>
+    <div id="resultado"></div>
+
+    <script>
+        function generarNumeros() {
+            // Obtener los valores de los inputs
+            const minimo = parseInt(document.getElementById('minimo').value);
+            const maximo = parseInt(document.getElementById('maximo').value);
+
+            // Verificar si los números son válidos
+            if (isNaN(minimo) || isNaN(maximo)) {
+                alert("Por favor, ingrese números válidos.");
+                return;
+            }
+
+            if (minimo >= maximo) {
+                alert("El número mínimo debe ser menor que el número máximo.");
+                return;
+            }
+
+            // Limpiar resultados anteriores
+            document.getElementById('resultado').innerHTML = '';
+
+            // Generar y mostrar 20 números aleatorios
+            for (let i = 0; i < 20; i++) {
+                const numeroAleatorio = Math.floor(Math.random() * (maximo - minimo + 1)) + minimo;
+                const nuevoParrafo = document.createElement('p');
+                nuevoParrafo.textContent = numeroAleatorio;
+                document.getElementById('resultado').appendChild(nuevoParrafo);
+            }
+        }
+    </script>
+</body>
+</html>
