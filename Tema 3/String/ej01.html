@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ejercicio 01</title>
+</head>
+<body>
+    <textarea id="texto" placeholder="Ingrese su texto aquí"></textarea>
+    <button onclick="analizarTexto()">Analizar</button>
+    <div id="resultados"></div>
+
+    <script>
+        function analizarTexto() {
+            const texto = document.getElementById('texto').value;
+            const palabras = texto.split(/\s+/); // Separa el texto en palabras
+
+            // Lista de preposiciones (puedes personalizarla)
+            const preposiciones = ['a', 'ante', 'bajo', 'cabe', 'con', 'contra', 'de', 'desde', 'durante', 'en', 'entre', 'hacia', 'hasta', 'mediante', 'para', 'por', 'según', 'sin', 'sobre', 'tras']; 1 
+
+            // Inicializar contadores
+            let numPreposiciones = 0;
+            let numPalabrasTotales = palabras.length;
+            let numPalabras2Letras = 0;
+            let numPalabras3Letras = 0;
+            let palindromos = [];
+
+            // Iterar sobre cada palabra
+            palabras.forEach(palabra => {
+                // Convertir a minúsculas para una comparación más precisa
+                const palabraMinuscula = palabra.toLowerCase();
+
+                // Contar preposiciones
+                if (preposiciones.includes(palabraMinuscula)) {
+                    numPreposiciones++;
+                }
+
+                // Contar palabras de 2 y 3 letras
+                if (palabraMinuscula.length === 2) {
+                    numPalabras2Letras++;
+                } else if (palabraMinuscula.length === 3) {
+                    numPalabras3Letras++;
+                }
+
+                // Identificar palíndromos
+                if (palabraMinuscula === palabraMinuscula.split('').reverse().join('')) {
+                    palindromos.push(palabra);
+                }
+            });
+
+            // Mostrar resultados
+            const resultadosDiv = document.getElementById('resultados');
+            resultadosDiv.innerHTML = `
+                <p>Número de preposiciones: ${numPreposiciones}</p>
+                <p>Número total de palabras: ${numPalabrasTotales}</p>
+                <p>Palabras con 2 letras: ${numPalabras2Letras}</p>
+                <p>Palabras con 3 letras: ${numPalabras3Letras}</p>
+                <p>Palíndromos: ${palindromos.join(', ')}</p>
+            `;
+        }
+    </script>
+</body>
+</html>

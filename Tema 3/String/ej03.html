@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ejercicio 03</title>
+</head>
+<body>
+    <textarea id="texto" placeholder="Ingrese su texto aquí"></textarea>
+    <br>
+    <label for="buscar">Buscar:</label>
+    <input type="text" id="buscar">
+    <br>
+    <label for="reemplazar">Reemplazar con:</label>
+    <input type="text" id="reemplazar">
+    <br>
+    <button onclick="buscarYReemplazar()">Buscar y Reemplazar</button>
+
+    <script>
+        function buscarYReemplazar() {
+            const texto = document.getElementById('texto').value;
+            const buscar = document.getElementById('buscar').value;
+            const reemplazar = document.getElementById('reemplazar').value;
+
+            // Realizar la búsqueda y reemplazo
+            const nuevoTexto = texto.replaceAll(buscar, reemplazar);
+
+            // Mostrar el resultado
+            document.getElementById('texto').value = nuevoTexto;
+        }
+    </script>
+</body>
+</html>

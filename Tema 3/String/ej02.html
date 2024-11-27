@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ejercicio 02</title>
+</head>
+<body>
+    <input type="text" id="letra" placeholder="Ingrese una letra">
+    <button onclick="cifrar()">Cifrar</button>
+    <p id="resultado"></p>
+
+    <script>
+        function cifrar() {
+            const letra = document.getElementById('letra').value.toUpperCase();
+            const resultado = document.getElementById('resultado');
+
+            // Validación: solo una letra
+            if (letra.length !== 1 || !/[A-Z]/.test(letra)) {
+                alert('Por favor, ingrese una sola letra del alfabeto.');
+                return;
+            }
+
+            // Cifrado ROT13
+            const codigo = letra.charCodeAt(0);
+            const nuevaLetra = String.fromCharCode(((codigo - 65 + 13) % 26) + 65);
+
+            // Concatenar y mostrar resultado
+            resultado.textContent += nuevaLetra;
+
+            // Limpiar campo de entrada
+            document.getElementById('letra').value = '';
+        }
+    </script>
+</body>
+</html>
