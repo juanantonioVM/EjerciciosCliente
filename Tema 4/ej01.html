@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 01</title>
+</head>
+<body>
+    <p id="muestraArray"></p><br>
+    <script>
+        var numeros = [4,6,2,1,8];
+
+        function mostrarArray() {
+            document.getElementById("muestraArray").innerHTML = "Valores: " + numeros;
+        }
+
+        function eliminarElemento() {
+            numeros.pop();
+        }
+
+        function nuevoElemento() {
+            numeros.push(document.getElementById("nuevoult").value);
+        }
+
+        function eliminarPrimerElemento() {
+            numeros.shift();
+        }
+
+        function nuevoPrimerElemento() {
+            numeros.unshift(document.getElementById("nuevoprim").value);
+        }
+
+        function cambiarValor(x, y) {
+            for (var i = 0; i < numeros.length; i++) {
+                if (numeros[i] == x) {
+                    numeros[i] = y;
+                }
+            }
+        }
+
+        function nuevoEnPosicion() {
+            
+        }
+
+    </script>
+    <button onclick="mostrarArray()">Array</button><hr>
+    <button onclick="eliminarElemento(), mostrarArray()">Eliminar último elemento</button><hr>
+    <input type="number" name="nuevoult" id="nuevoult">
+    <button onclick="nuevoElemento(), mostrarArray()">Añadir último elemento</button><hr>
+    <button onclick="eliminarPrimerElemento(), mostrarArray()">Eliminar primer elemento</button><hr>
+    <input type="number" name="nuevoprim" id="nuevoprim">
+    <button onclick="nuevoPrimerElemento(), mostrarArray()">Añadir primer elemento</button><hr>
+    <input type="number" name="uno" id="uno">
+    <input type="number" name="dos" id="dos">
+    <button onclick="cambiarValor(document.getElementById('uno').value, document.getElementById('dos').value), mostrarArray()">Cambiar valores</button><hr>
+    <!-- splice -->
+</body>
+</html>
