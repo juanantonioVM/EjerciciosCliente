@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 12</title>
+</head>
+<body>
+    <label for="numeros">Ingresa un número</label>
+    <input type="number" id="numeros">
+    <button id="añadir" onclick="anadirnumeros()">Añadir</button>
+    <p id="demo"></p>
+
+    <script>
+        function media(...args) {
+            let sum = 0;
+            for (let arg of args) {
+
+                document.getElementById('demo').value.split(',');
+                sum += arg
+            }
+            let media = sum / args.length;
+            return media;
+        }
+
+        function anadirnumeros() {
+            let numero = document.getElementById('numeros').value;
+            let demo = document.getElementById('demo');
+            demo.innerHTML += numero + ',';
+        }
+
+    </script>
+</body>
+</html>
